@@ -2,7 +2,7 @@
 
 /* ######### Ausgangswerte definieren, insbesondere: Welche Kategorie soll abgebildet werden ($ontologyId) ########### */
 
-// Welche Kategorie soll als Naviagtion dargestellt werden? ToDo: Schön wär es, wenn man so Art Blöcke im Backend definieren und diesen Wert übergeben könnte...
+// Welche Kategorie soll als Naviagtion dargestellt werden?
 $ontologyId = 16341;
 $ontologyAdministration = new OntologyAdministration();
 $RootNode = $ontologyAdministration->getRootNodeOfOntology($ontologyId);
@@ -10,7 +10,7 @@ $ontologyAdministration->readOntology($RootNode, $ontologyId);
 // Die OntoNodes zur Abbildung der Naviagtion werden geholt
 $nodesOnto = $ontologyAdministration->getOntologyHierarchy()->getElements();
 
-//Ist die per get übergebene DropId eine aus der darzustellenden Taxonomie? (Ist wichtig für, welcher Zweig aufgeklappt sein soll).
+//Ist die per get �bergebene DropId eine aus der darzustellenden Taxonomie? (Ist wichtig f�r, welcher Zweig aufgeklappt sein soll).
 if(is_object($nodesOnto[$DropId])){
    $catId = $DropId;
 } else {
@@ -76,7 +76,7 @@ $showRoot = FALSE;
 $maxDepth = 2;
 
 //oben definiert:
-echo buildOntologyTree($catId,$nodesOnto['16342'],$nodesOnto,$ontologyId,$ontologyAdministration,$modRewrite,$showRoot,$maxDepth,'first');
+echo buildOntologyTree($catId,$nodesOnto[$RootNode],$nodesOnto,$ontologyId,$ontologyAdministration,$modRewrite,$showRoot,$maxDepth,'first');
 
 echo "</ul>";
 ?>
