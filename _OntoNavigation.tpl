@@ -2,7 +2,7 @@
 
 /* ######### Ausgangswerte definieren, insbesondere: Welche Kategorie soll abgebildet werden ($ontologyId) ########### */
 
-// Welche Kategorie soll als Naviagtion dargestellt werden?
+// Welche Kategorie soll als Naviagtion dargestellt werden? ToDo: Schön wär es, wenn man so Art Blöcke im Backend definieren und diesen Wert übergeben könnte...
 $ontologyId = 16341;
 $ontologyAdministration = new OntologyAdministration();
 $RootNode = $ontologyAdministration->getRootNodeOfOntology($ontologyId);
